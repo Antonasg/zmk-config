@@ -38,6 +38,22 @@
         };
     };
 
+    macros {
+        gaming_on: gaming_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "GAMING_ON";
+        };
+
+        gaming_off: gaming_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "GAMING_OFF";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
