@@ -42,14 +42,14 @@
         gaming_on: gaming_on {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&to 4>;
             label = "GAMING_ON";
         };
 
         gaming_off: gaming_off {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&to 0>;
             label = "GAMING_OFF";
         };
     };
@@ -110,7 +110,7 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans     &trans    &trans  &trans     &trans   &to 4
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                       &trans     &trans    &trans  &trans     &trans   &gaming_on
 &trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans          &kp PG_UP                     &trans    &kp UP  &trans     &kp N0   &trans
 &trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK        &kp LEFT                      &kp DOWN  &kp UP  &kp RIGHT  &kp DEL  &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &studio_unlock  &trans     &trans  &kp PG_DN  &trans    &trans  &trans     &trans   &trans
@@ -141,11 +141,11 @@
         gaming {
             display-name = "gaming";
             bindings = <
-&kp GRAVE   &kp N1  &kp N2            &kp N3    &kp N4        &kp N5                                      &kp N6  &kp N7         &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp TAB     &kp Q   &kp W             &kp E     &kp R         &kp T             &kp Y                             &kp U          &kp I      &kp O              &kp P     &kp EQUAL
-&kp ESCAPE  &kp A   &kp S             &kp D     &kp F         &kp G             &kp H                             &kp J          &kp K      &kp L              &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z   &kp X             &kp C     &kp V         &kp B             &kp M      &kp BACKSPACE  &kp N   &kp M          &kp COMMA  &kp DOT            &kp FSLH  &kp RSHFT
-                    &kp LEFT_CONTROL  &kp LALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp SPACE  &kp ENTER      &mo 2   &kp RIGHT_GUI  &kp RALT   &kp RIGHT_CONTROL
+&kp GRAVE   &kp N1  &kp N2  &kp N3    &kp N4        &kp N5                                      &kp N6  &kp N7         &kp N8     &kp N9             &kp N0    &gaming_off
+&kp TAB     &kp Q   &kp W   &kp E     &kp R         &kp T             &kp Y                             &kp U          &kp I      &kp O              &kp P     &kp EQUAL
+&kp ESCAPE  &kp A   &kp S   &kp D     &kp F         &kp G             &kp H                             &kp J          &kp K      &kp L              &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z   &kp X   &kp C     &kp V         &kp B             &kp M      &kp BACKSPACE  &kp N   &kp M          &kp COMMA  &kp DOT            &kp FSLH  &kp RSHFT
+                    &mo 5   &kp LALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp SPACE  &kp ENTER      &mo 2   &kp RIGHT_GUI  &kp RALT   &kp RIGHT_CONTROL
             >;
 
             sensor-bindings =
@@ -157,7 +157,7 @@
             display-name = "UTIL";
             bindings = <
 &kp GRAVE   &kp N1  &kp N2            &kp N3    &kp N4        &kp N5                                      &kp N6  &kp N7         &kp N8     &kp N9             &kp N0    &kp MINUS
-&kp TAB     &kp Q   &kp W             &kp E     &kp R         &kp T             &kp Y                             &kp U          &kp I      &kp O              &kp P     &kp EQUAL
+&kp TAB     &kp Q   &kp W             &kp I     &kp R         &kp T             &kp Y                             &kp U          &kp I      &kp O              &kp P     &kp EQUAL
 &kp ESCAPE  &kp A   &kp S             &kp D     &kp F         &kp G             &kp H                             &kp J          &kp K      &kp L              &kp SEMI  &kp SQT
 &kp LSHFT   &kp Z   &kp X             &kp C     &kp V         &kp B             &kp M      &kp BACKSPACE  &kp N   &kp M          &kp COMMA  &kp DOT            &kp FSLH  &kp RSHFT
                     &kp LEFT_CONTROL  &kp LALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp SPACE  &kp ENTER      &mo 2   &kp RIGHT_GUI  &kp RALT   &kp RIGHT_CONTROL
